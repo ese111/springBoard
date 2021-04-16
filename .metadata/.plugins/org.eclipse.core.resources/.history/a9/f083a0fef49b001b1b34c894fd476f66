@@ -1,0 +1,26 @@
+package com.spring.mappers;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.spring.vo.BoardVO;
+
+public interface BoardMapper  {
+	
+	public int getAllCount();
+
+	public List<BoardVO> getAllBoard(@Param("start")int start,@Param("count") int count) throws Exception;
+	
+	public BoardVO getOneBoard(@Param("num")int num);
+	
+	public void upReadCount(@Param("num")int num);
+	
+	public int getRef();
+
+	public int insertBoard(BoardVO bean, @Param("ref")int ref);
+
+	public int setReLevel(@Param("ref")int ref,@Param("re_level") int re_level);
+
+	public int reWriteBoard(BoardVO bean);
+}

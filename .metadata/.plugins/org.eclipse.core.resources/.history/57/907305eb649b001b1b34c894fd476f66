@@ -1,0 +1,23 @@
+package com.spring.mappers;
+
+import java.util.List;
+
+import com.spring.vo.BoardVO;
+
+public interface BoardMapper  {
+	public int getAllCount();
+
+	public List<BoardVO> getAllBoard(int start, int count) throws Exception;
+	
+	public BoardVO getOneBoard(int num);
+	
+	public void upReadCount(int num);
+	
+	public int getRef();
+
+	public int insertBoard(BoardVO bean, int ref);
+
+	public void setReLevel(int ref, int re_level);
+
+	public int reWriteBoard(BoardVO bean);
+}

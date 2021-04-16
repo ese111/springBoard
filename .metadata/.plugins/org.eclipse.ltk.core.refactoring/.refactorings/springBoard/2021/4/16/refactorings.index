@@ -1,0 +1,18 @@
+1618204151782	Delete element
+1618204156990	Delete element
+1618204560528	Rename package 'com.spring.DTO'
+1618204589514	Rename package 'com.spring.Dto'
+1618205163355	Move compilation unit
+1618205197326	Move file
+1618205488288	Rename type 'Board'
+1618205669108	Move file
+1618207264875	Delete element
+1618207364848	Rename package 'com.spring.service'
+1618207387105	Rename type 'BoardDAO'
+1618208580868	Rename package 'com.spring.dto'
+1618212072570	Move folder
+1618212103854	Move folder
+1618212112442	Rename package 'com.spring.dao'
+1618212122778	Rename type 'BoardDAO'
+1618213555871	Delete element
+1618274378879	Rename resource 'boardMapper.xml'

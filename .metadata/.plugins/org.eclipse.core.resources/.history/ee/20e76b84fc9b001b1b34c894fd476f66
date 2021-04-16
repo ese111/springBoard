@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.mappers.BoardMapper">
+	 
+	<select id="getAllBoard" resultType="com.spring.vo.BoardVO">
+	SELECT * FROM board ORDER BY ref DESC, re_level LIMIT #{start}, #{count} 
+	</select>
+	
+	<select id="getAllCount" resultType="int">
+	SELECT COUNT(*) FROM board
+	</select>
+	
+	<update id="upReadCount">
+	UPDATE board SET readcount=readcount+1 WHERE num=#{num}
+	</update>
+	
+	<select id="getOneBoard" resultType="com.spring.vo.BoardVO">
+	SELECT * FROM board WHERE num=#{num}
+	</select>
+	
+	<select id="getRef" resultType="int">
+	SELECT MAX(ref) FROM board
+	</select>
+	
+	<insert id="insertBoard" parameterType="com.spring.vo.BoardVO">
+	INSERT INTO board (writer, email, subject, password, reg_date, ref, re_step, re_level, readcount, content) 
+	VALUES(#{writer}, #{email}, #{subject}, #{password}, now(), #{ref}, 1, 1, 0, #{content})
+	</insert>
+	
+	<update id="upReLeverl">
+	UPDATE board SET re_level=re_level+1 
+	WHERE ref=#{ref} and re_level > #{re_level}
+	</update>
+	
+	<insert id="reWriteBoard">
+	INSERT INTO board (writer, email, subject, password, reg_date, ref, re_step, re_level, readcount, content)
+	VALUES (#{writer},#{email},#{subject},#{password},now(),#{ref},#{re_step},#{re_level},0,#{content})
+	</insert>
+	
+</mapper>

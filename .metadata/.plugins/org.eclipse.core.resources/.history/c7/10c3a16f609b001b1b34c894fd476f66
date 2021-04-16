@@ -1,0 +1,11 @@
+package com.spring.mappers;
+
+import java.util.List;
+
+import com.spring.vo.BoardVO;
+
+public interface BoardMapper  {
+	public int getAllCount();
+
+	public List<BoardVO> getAllBoard(int start, int count) throws Exception;
+}

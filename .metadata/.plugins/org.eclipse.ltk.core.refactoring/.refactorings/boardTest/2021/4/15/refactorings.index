@@ -1,0 +1,7 @@
+1617599864090	Move file
+1617600387261	Rename type 'boardDAO'
+1617600391956	Rename type 'boardVO'
+1617601044900	Rename package 'com.boardTest.VO'
+1617601716820	Rename package 'com.boardTest.DAO'
+1617601725982	Rename package 'com.boardTest.DTO'
+1617601769761	Rename resource 'mapper.xml'

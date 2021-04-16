@@ -1,0 +1,54 @@
+package com.spring.service;
+
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import com.spring.mappers.BoardMapper;
+import com.spring.vo.BoardVO;
+
+import lombok.AllArgsConstructor;
+@Service
+@Qualifier("bs")
+@AllArgsConstructor
+public class BoadServiceImpl implements BoardService {
+	
+	private BoardMapper dao;
+	@Override
+	public List<BoardVO> getAllBoard(int start, int count) throws Exception {
+		return dao.getAllBoard(start, count);
+	}
+	@Override
+	public int getAllCount() throws Exception{
+		return dao.getAllCount();
+	}
+	@Override
+	public BoardVO getOneBoard(int num) {
+		dao.upReadCount(num);
+		return dao.getOneBoard(num);
+	}
+	
+	@Override
+	public int insertBoard(BoardVO bean, int ref) {
+		// TODO Auto-generated method stub
+		return dao.insertBoard(bean, ref);
+	}
+	@Override
+	public int reWriteBoard(BoardVO bean) {
+		
+		return dao.reWriteBoard(bean);
+	}
+	@Override
+	public int getRef() {
+		
+		return dao.getRef();
+	}
+	@Override
+	public int setReLevel(int ref, int re_level) {
+		// TODO Auto-generated method stub
+		return dao.setReLevel(ref, re_level);
+	}
+
+}
